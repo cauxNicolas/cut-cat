@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Nav from "../components/Navigation";
-
+// Image
+import CatLoading from "../assets/images/catLoading.gif";
 // bdd
 import axios from "axios";
 
@@ -9,7 +10,9 @@ const Classement = () => {
 	const [data, setData] = useState([]);
 
 	const fetchData = async () => {
-		const response = await axios.get("http://localhost:3100/classement");
+		const response = await axios.get(
+			"https://cut-cat.herokuapp.com/classement"
+		);
 		console.log(response.data);
 		setData(response.data);
 		setIsLoading(false);
@@ -23,8 +26,11 @@ const Classement = () => {
 		<div>
 			<Nav />
 			{isLoading === true ? (
-				<div className="container">
-					<p>chargement en cours</p>
+				<div className="container loading">
+					<div className="cat-img-loader">
+						<img src={CatLoading} alt="image animé d'un chat" />
+					</div>
+					<p>chargement en cours...</p>
 				</div>
 			) : (
 				<div className="container">

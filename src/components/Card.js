@@ -6,10 +6,13 @@ const Card = ({ data, imageRandom, numberCard }) => {
 
 	const handleSubmit = async (event) => {
 		//event.preventDefault();
-		const response = await axios.post("http://localhost:3100/classement", {
-			data: data,
-			numberCard: numberCard,
-		});
+		const response = await axios.post(
+			"https://cut-cat.herokuapp.com/classement",
+			{
+				data: data,
+				numberCard: numberCard,
+			}
+		);
 		console.log(response);
 	};
 
