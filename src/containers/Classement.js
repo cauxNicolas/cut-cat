@@ -41,7 +41,7 @@ const Classement = () => {
 						{data.map((cat, index) => {
 							console.log(cat);
 							return (
-								<div className="classement-cat">
+								<div className="classement-cat" key={index}>
 									<div className="classement-cat-content">
 										<img
 											src={cat.picture}
