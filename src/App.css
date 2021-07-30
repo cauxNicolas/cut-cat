@@ -1,38 +1,212 @@
-.App {
-  text-align: center;
+/* google font */
+@import url("https://fonts.googleapis.com/css2?family=Schoolbell&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+	font-family: "Montserrat", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav {
+	background-color: #aa8fbd;
+	padding: 1rem 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navbar-menu {
+	padding: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-menu ul {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar-menu ul li {
+	font-size: 1.4rem;
+	font-weight: 600;
+}
+
+.navbar-menu ul li a {
+	text-decoration: none;
+	color: #584267;
+	margin-left: 1rem;
+}
+
+.navbar-menu .menu-active a {
+	color: white;
+}
+
+.container {
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+.logo-cat {
+	display: flex;
+	align-items: center;
+	padding: 1rem;
+}
+
+.logo-cat img {
+	width: 70px;
+	margin-right: 1rem;
+}
+
+.logo-cat p {
+	font-family: "Schoolbell", cursive;
+	color: white;
+	font-size: 2.3rem;
+}
+
+.loading {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.cat-img-loader {
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.cat-img-loader img {
+	width: 200%;
+}
+
+.loading p {
+	font-family: "Schoolbell";
+	color: #976d9e;
+	margin-top: 1rem;
+	font-size: 1.5rem;
+}
+
+.home {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: calc(100vh - 110px);
+}
+
+.card {
+	background-color: #f7f7f7;
+	height: 270px;
+	width: 200px;
+	border-radius: 10px;
+	box-shadow: #58426757 0px 0px 25px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 1rem;
+}
+
+.card-img-random {
+	border-radius: 8px;
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+	display: flex;
+	/* align-items: center; */
+	justify-content: center;
+}
+
+.d-flex {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.vote {
+	text-align: center;
+	font-size: 2rem;
+	color: #976d9e;
+	margin-bottom: 3rem;
+}
+
+.versus {
+	margin: 1rem;
+	color: #dfc9e2;
+	font-weight: 700;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid #dfc9e2;
+}
+
+button {
+	padding: 1rem;
+	font-size: 1.1rem;
+	border-radius: 8px;
+	border: none;
+	background-color: #976d9e;
+	color: white;
+	width: 100%;
+	cursor: pointer;
+}
+
+form {
+	width: 100%;
+}
+
+.classement {
+	display: flex;
+	/* flex-wrap: wrap; */
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.classement-cat {
+	display: flex;
+	width: 500px;
+	margin: 1rem;
+	background-color: #f7f7f7;
+	box-shadow: #58426757 0px 0px 25px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.classement-cat-content {
+	width: 40%;
+	height: 200px;
+	overflow: hidden;
+	margin-right: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.classement-cat img {
+	width: 200%;
+}
+
+.classement-cat-info {
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	color: #976d9e;
+}
+
+.big {
+	font-size: 1.3rem;
+	font-weight: 700;
+	margin-top: 0.5rem;
 }

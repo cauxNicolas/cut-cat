@@ -1,25 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState, useEffect } from "react";
+// Navigation
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// Containers
+import Classement from "./containers/Classement";
+import Home from "./containers/Home";
+// bdd
+import axios from "axios";
+// Image
+import CatLoading from "./assets/images/catLoading.gif";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [isLoading, setIsLoading] = useState(true);
+	const [data, setData] = useState([]);
+
+	const fetchData = async () => {
+		try {
+			const response = await axios.get("http://localhost:3100");
+			setData(response.data);
+			setIsLoading(false);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+	useEffect(() => {
+		fetchData();
+	}, []);
+	return (
+		<>
+			{isLoading === true ? (
+				<div className="container loading">
+					<div className="cat-img-loader">
+						<img src={CatLoading} alt="image animé d'un chat" />
+					</div>
+					<p>chargement en cours...</p>
+				</div>
+			) : (
+				<Router>
+					<Switch>
+						<Route path="/classement">
+							<Classement />
+						</Route>
+						<Route path="/">
+							<Home data={data} />
+						</Route>
+					</Switch>
+				</Router>
+			)}
+		</>
+	);
 }
 
 export default App;
